@@ -18,7 +18,6 @@ public class JeivasflixApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		var api = new ConsumeApi();
 		var json = api.getData("https://www.omdbapi.com/?t=breaking+bad&apikey=f00ecf00");
-		System.out.println(json);
 		ConvertData converter = new ConvertData();
 		SeriesData data = converter.getData(json, SeriesData.class);
 		System.out.println(data);
